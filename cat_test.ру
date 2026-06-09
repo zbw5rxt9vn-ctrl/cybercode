@@ -1,1 +1,18 @@
-print ("the 'cat' command is used to rea")
+def read_and_print_file(file_path):
+    """
+    A simple function to read and print the contents of a file.
+    This mimics the basic behavior of the standard 'cat' command.
+    """
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            content = file.read()
+            print(content)
+    except FileNotFoundError:
+        print(f"Error: The file at '{file_path}' was not found.")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+
+if __name__ == "__main__":
+    # Example usage (uncomment and replace with a real file path to test):
+    # read_and_print_file("example.txt")
+    print("The custom 'cat' command script is ready for use.")
